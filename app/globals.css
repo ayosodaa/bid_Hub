@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* BID brand colors as CSS variables */
+    --bid: #842751;
+    --bid-light: #f5e8ef;
+    --bid-dark: #5c1a38;
+    --bid-mid: #a8346a;
+    --bid-accent: #e8c5d6;
+
+    /* Semantic colors matching mockup */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --background-primary: 0 0% 100%;
+    --background-secondary: 46 25% 96%;
+    --background-tertiary: 45 30% 95%;
+
+    --text-primary: 0 0% 10%;
+    --text-secondary: 0 0% 40%;
+    --text-tertiary: 0 0% 60%;
+
+    --border-primary: 0 0% 90%;
+    --border-secondary: 0 0% 85%;
+    --border-tertiary: 0 0% 88%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 331 52% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 46 25% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 46 25% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 331 52% 89%;
+    --accent-foreground: 331 52% 20%;
+
+    --destructive: 0 72% 41%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 331 52% 34%;
+
+    --radius: 10px;
+
+    --chart-1: 331 52% 34%;
+    --chart-2: 210 65% 37%;
+    --chart-3: 160 55% 40%;
+    --chart-4: 40 85% 55%;
+    --chart-5: 27 60% 55%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --background-primary: 0 0% 8%;
+    --background-secondary: 0 0% 12%;
+    --background-tertiary: 0 0% 15%;
+
+    --text-primary: 0 0% 95%;
+    --text-secondary: 0 0% 70%;
+    --text-tertiary: 0 0% 50%;
+
+    --border-primary: 0 0% 20%;
+    --border-secondary: 0 0% 18%;
+    --border-tertiary: 0 0% 22%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 331 52% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 331 52% 20%;
+    --accent-foreground: 331 52% 95%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 331 52% 45%;
+
+    --chart-1: 331 52% 55%;
+    --chart-2: 210 70% 55%;
+    --chart-3: 160 60% 50%;
+    --chart-4: 40 80% 60%;
+    --chart-5: 27 75% 60%;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: hsl(46 25% 96%);
+    color: hsl(var(--foreground));
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Background colors from mockup */
+  .bg-app-primary {
+    background-color: hsl(var(--background-primary));
+  }
+  .bg-app-secondary {
+    background-color: hsl(var(--background-secondary));
+  }
+  .bg-app-tertiary {
+    background-color: hsl(var(--background-tertiary));
+  }
+
+  /* Text colors from mockup */
+  .text-app-primary {
+    color: hsl(var(--text-primary));
+  }
+  .text-app-secondary {
+    color: hsl(var(--text-secondary));
+  }
+  .text-app-tertiary {
+    color: hsl(var(--text-tertiary));
+  }
+
+  /* Border colors from mockup */
+  .border-app-primary {
+    border-color: hsl(var(--border-primary));
+  }
+  .border-app-secondary {
+    border-color: hsl(var(--border-secondary));
+  }
+  .border-app-tertiary {
+    border-color: hsl(var(--border-tertiary));
+  }
+
+  /* Card styling matching mockup */
+  .card-bid {
+    background-color: hsl(var(--background-primary));
+    border: 0.5px solid hsl(var(--border-tertiary));
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  /* Stat card from mockup */
+  .stat-card-bid {
+    background-color: hsl(var(--background-primary));
+    border: 0.5px solid hsl(var(--border-tertiary));
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  /* Avatar styling */
+  .avatar-bid {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #f5e8ef;
+    color: #5c1a38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* Table styling from mockup */
+  .table-bid {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+  }
+  .table-bid th {
+    text-align: left;
+    padding: 7px 10px;
+    font-weight: 500;
+    font-size: 10px;
+    color: hsl(var(--text-secondary));
+    border-bottom: 0.5px solid hsl(var(--border-tertiary));
+    white-space: nowrap;
+  }
+  .table-bid td {
+    padding: 8px 10px;
+    border-bottom: 0.5px solid hsl(var(--border-tertiary));
+    vertical-align: middle;
+  }
+  .table-bid tr:last-child td {
+    border-bottom: none;
+  }
+  .table-bid tbody tr:hover td {
+    background-color: hsl(var(--background-secondary));
+  }
+
+  /* Event card styling from mockup */
+  .event-card {
+    padding: 9px 11px;
+    border-radius: 7px;
+    margin-bottom: 7px;
+    border-left: 3px solid #842751;
+    background-color: hsl(var(--background-secondary));
+  }
+
+  /* Sidebar nav item */
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    color: hsl(var(--text-secondary));
+    transition: all 0.15s;
+    margin-bottom: 1px;
+  }
+  .nav-item:hover {
+    background-color: hsl(var(--background-secondary));
+    color: hsl(var(--text-primary));
+  }
+  .nav-item.active {
+    background-color: #f5e8ef;
+    color: #5c1a38;
+    font-weight: 500;
+  }
+  .nav-item svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+  .nav-item.active svg {
+    opacity: 1;
+  }
+
+  /* Divider */
+  .divider-bid {
+    height: 0.5px;
+    background-color: hsl(var(--border-tertiary));
+    margin: 12px 0;
+  }
+
+  /* Font family utility */
+  .font-mono-bid {
+    font-family: 'DM Mono', monospace;
+  }
+}
